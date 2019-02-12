@@ -8,6 +8,8 @@ def get_meaning(word):
         return data[word]
      elif word.title() in data:  
         return data[word.title()]
+      elif word.upper() in data: 
+        return data[word.upper()]
     elif len(get_close_matches(word, data.keys())) > 0:
             yn = str.upper(input("Please double-check your spelling. Did you mean %s instead? Enter Y for Yes and N for No: " % get_close_matches(word, data.keys())[0]))
             if yn == "Y":
